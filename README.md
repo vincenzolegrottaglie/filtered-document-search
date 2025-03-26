@@ -2,6 +2,10 @@
 
 [![awesome plugin](https://custom-icon-badges.demolab.com/static/v1?label=&message=awesome+plugin&color=383938&style=for-the-badge&logo=cheshire_cat_ai)](https://)
 
+<p align="center">
+  <img src="logo.png" alt="Filtered Document Search Logo" width="200"/>
+</p>
+
 A Cheshire Cat AI plugin that enables user-specific document filtering and search capabilities. This plugin ensures that each user can only access and search through their own documents, providing a secure and personalized experience.
 
 ## Features

@@ -1,26 +1,63 @@
-# My plugin
+# Filtered Document Search
 
-[![awesome plugin](https://custom-icon-badges.demolab.com/static/v1?label=&message=awesome+plugin&color=383938&style=for-the-badge&logo=cheshire_cat_ai)](https://)  
-[![Awesome plugin](https://custom-icon-badges.demolab.com/static/v1?label=&message=Awesome+plugin&color=000000&style=for-the-badge&logo=cheshire_cat_ai)](https://)  
-[![awesome plugin](https://custom-icon-badges.demolab.com/static/v1?label=&message=awesome+plugin&color=F4F4F5&style=for-the-badge&logo=cheshire_cat_black)](https://)
+[![awesome plugin](https://custom-icon-badges.demolab.com/static/v1?label=&message=awesome+plugin&color=383938&style=for-the-badge&logo=cheshire_cat_ai)](https://)
 
-Write here all the useful information about your plugin.
+A Cheshire Cat AI plugin that enables user-specific document filtering and search capabilities. This plugin ensures that each user can only access and search through their own documents, providing a secure and personalized experience.
 
-This repository is the template to automate the release of official Cheshire Cat AI plugins. 
+## Features
 
-## Usage
+- **User-Specific Document Storage**: Automatically tags all stored documents with the current user's ID
+- **Filtered Memory Access**: Ensures users can only access their own documents during memory recall
+- **Secure Episodic Memory**: Adds user identification to episodic memories
+- **Privacy by Design**: Built-in user isolation for multi-user environments
 
-1. Create a new repository clicking on the `Use this template` button.
-2. Clone your new repo directly in the Cat's `plugins` folder.
-3. Run the `setup.py` script:
+## Installation
+
+1. Clone this repository into your Cheshire Cat AI's plugins folder:
 ```bash
-python setup.py
+cd /path/to/cheshire-cat/plugins
+git clone https://github.com/vincenzolegrottaglie/filtered-document-search.git
 ```
-The script will prompt you to write the name of your plugin and make an initial setup setting the name in the files.
 
-4. Start developing!
+2. Restart your Cheshire Cat AI instance to load the plugin.
 
-> **Important**
-> A new release of your plugin is triggered every time you set a new `version` in the `plugin.json` file.
-> Please, remember to set it correctly every time you want to release an update.
+## How It Works
+
+The plugin implements three main hooks to manage document access:
+
+1. **Document Storage Hook** (`before_rabbithole_stores_documents`):
+   - Adds the current user's ID to all documents before storage
+   - Ensures proper document ownership tracking
+
+2. **Episodic Memory Hook** (`before_cat_stores_episodic_memory`):
+   - Tags episodic memories with user identification
+   - Maintains user context in memory storage
+
+3. **Memory Recall Hook** (`before_cat_recalls_declarative_memories`):
+   - Filters document searches based on the current user's ID
+   - Ensures users only access their own documents
+
+## Use Cases
+
+- Multi-user chatbot environments
+- Secure document management systems
+- Privacy-focused applications
+- User-isolated knowledge bases
+
+## Requirements
+
+- Cheshire Cat AI platform
+- Python 3.x
+
+## Version
+
+Current version: 0.0.1
+
+## Authors
+
+Developed by [Net7](https://www.netseven.it/)
+
+## License
+
+This project is open source. See the LICENSE file for details.
 

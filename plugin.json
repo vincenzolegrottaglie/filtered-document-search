@@ -1,10 +1,10 @@
 {
-    "name": "My plugin",
+    "name": "Filtered Document Search",
     "version": "0.0.1",
-    "description": "Description of my_plugin.",
-    "author_name": "Me",
-    "author_url": "https://mywebsite.me",
-    "plugin_url": "https://github.com/my_name/my_plugin",
-    "tags": "cat, template, example",
-    "thumb": "https://raw.githubusercontent.com/my_repo_path/my_plugin.png"
+    "description": "Filtered document search for the current user. It adds the user ID to the documents and filters the search to query only the documents of the current user.",
+    "author_name": "Net7",
+    "author_url": "https://www.netseven.it/",
+    "plugin_url": "https://github.com/vincenzolegrottaglie/filtered-document-search",
+    "tags": "cat, filtered, search, documents, user",
+    "thumb": "https://raw.githubusercontent.com/vincenzolegrottaglie/filtered-document-search/logo.png"
 }

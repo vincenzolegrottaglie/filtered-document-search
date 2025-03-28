@@ -22,6 +22,9 @@ def before_cat_recalls_declarative_memories(declarative_recall_config, cat):
     """Filters the search to show only the documents of the current user."""
     user_id = cat.user_id
     
-    declarative_recall_config["metadata"] = {"user_id": user_id}
+    if "metadata" not in declarative_recall_config:
+        declarative_recall_config["metadata"] = {}
+    
+    declarative_recall_config["metadata"]["user_id"] = user_id
 
     return declarative_recall_config
